@@ -5,13 +5,13 @@ getList();
 const value = ref("");
 const list = ref([]);
 
-// 接口目前是写在sealos云操作系统的
+// 接口写在本地，localhost:3000,基于ChatGPT跑的接口（）
 // 发起网络请求的函数前都要加上async，作为异步函数
 async function getList() {
   // await关键字在异步函数里才能使用！async和await一定是同时出现的
   const res = await axios({
     // 接口地址以字符串形式传入
-    url: "https://yuwiv4ooli.hzh.sealos.run/get_list",
+    url: "http://localhost:3000/get_list",
     // 请求方法也是以字符串形式传入
     method: "GET",
   });
@@ -21,7 +21,7 @@ async function getList() {
 
 async function add() {
   await axios({
-    url: "https://yuwiv4ooli.hzh.sealos.run/add_todo",
+    url: "http://localhost:3000/add_todo",
     method: "POST",
     data: {
       value: value.value,
@@ -35,7 +35,7 @@ async function add() {
 
 async function update(id) {
   await axios({
-    url: "https://yuwiv4ooli.hzh.sealos.run/update_todo",
+    url: "http://localhost:3000/update_todo",
     method: "POST",
     data: {
       id,
@@ -47,7 +47,7 @@ async function update(id) {
 
 async function del(id) {
   await axios({
-    url: "https://yuwiv4ooli.hzh.sealos.run/del_todo",
+    url: "http://localhost:3000/del_todo",
     method: "POST",
     data: {
       id,
