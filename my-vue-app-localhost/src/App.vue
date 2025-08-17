@@ -11,9 +11,9 @@ async function getList() {
   // await关键字在异步函数里才能使用！async和await一定是同时出现的
   const res = await axios({
     // 接口地址以字符串形式传入
-    // url: "http://localhost:3000/get_list",
+    url: "http://localhost:3000/get_list",
     //下面是公网测试用
-    url: "https://36.158.228.122:56872/api/get_list",
+    // url: "https://36.158.228.122:56872/api/get_list",
     // 请求方法也是以字符串形式传入
     method: "GET",
   });
@@ -27,9 +27,9 @@ async function add() {
     return;
   }
   await axios({
-    // url: "http://localhost:3000/add_todo",
+    url: "http://localhost:3000/add_todo",
     //下面是公网测试用
-    url: "https://36.158.228.122:56872/api/add_todo",
+    // url: "https://36.158.228.122:56872/api/add_todo",
     method: "POST",
     data: {
       value: value.value,
@@ -43,9 +43,9 @@ async function add() {
 
 async function update(id) {
   await axios({
-    // url: "http://localhost:3000/update_todo",
+    url: "http://localhost:3000/update_todo",
     //下面是公网测试用
-    url: "https://36.158.228.122:56872/api/update_todo",
+    // url: "https://36.158.228.122:56872/api/update_todo",
     method: "POST",
     data: {
       id,
@@ -57,9 +57,9 @@ async function update(id) {
 
 async function del(id) {
   await axios({
-    // url: "http://localhost:3000/del_todo",
+    url: "http://localhost:3000/del_todo",
     //下面是公网测试用
-    url: "https://36.158.228.122:56872/api/del_todo",
+    // url: "https://36.158.228.122:56872/api/del_todo",
     method: "POST",
     data: {
       id,
